@@ -28,20 +28,20 @@
                       <li><a href="{{url('/organizations')}}">Organizations</a></li>
                       <li><a href="{{url('/roles')}}">Roles</a></li>
                       <li><a href="{{url('/users')}}">Users</a></li>
-                      <li><a href="#">Hotels</a></li>
-                      <li><a href="#">Hotel Admin</a></li>
+                      <li><a href="#">Hotels (N/A)</a></li>
+                      <li><a href="#">Hotel Admin (N/A)</a></li>
                     </ul>
                   </li>
-                  <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Enquiries</a></li>
+                  <li><a href="{{url('/enquiries')}}"><i class="fa fa-home"></i> Enquiries</a></li>
                   <li><a><i class="fa fa-edit"></i> Hotel Management <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Offer (Special / Package)</a></li>
-                      <li><a href="#">Rooms</a></li>
-                      <li><a href="#">Booking Engine</a></li>
+                      <li><a href="{{url('/offers')}}">Offer (Special / Package)</a></li>
+                      <li><a href="{{url('/rooms')}}">Rooms</a></li>
+                      <li><a href="{{url('/booking_engines')}}">Booking Engine</a></li>
                       <li><a>Email<span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
-                            <li class="sub_menu"><a href="#">Email Templates</a></li>
-                            <li><a href="#">Email Settings</a></li>
+                            <li class="sub_menu"><a href="{{url('/email_templates')}}">Email Templates</a></li>
+                            <li><a href="{{url('/email_settings')}}">Email Settings</a></li>
                           </ul>
                         </li>
                     </ul>

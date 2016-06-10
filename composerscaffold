@@ -21,7 +21,8 @@ php artisan generate:scaffold email_setting --fields="hotel_id:integer:unsigned,
 
 php artisan generate:pivot email_setting email_address
 
-php artisan generate:scaffold outbox --fields="hotel_id:integer:unsigned, enquire_id:integer:unsigned, status:string, sent_to:text, sent_cc:text, sent_bcc:text, message:text, title:string"
+php artisan generate:scaffold outbox --fields="hotel_id:integer:unsigned, enquire_id:integer:unsigned, status:string, sent_to:text, sent_cc:text:nullable, sent_bcc:text:nullable, message:text, title:string"
 
+php artisan generate:scaffold enquire --fields="hotel_id:integer:unsigned, offer_id:integer:unsigned, room_id:integer:unsigned, offer_code:string, room_code:string, quotation_number:string:unique, full_name:string, email:string, phone_number:string:nullable, mobile_number:string:nullable, address:string:nullable, city:string, postal_code:string:nullable, country:string, state:string:nullable, region:string:nullable, day_in:datetime, day_out:datetime, checkin_date:datetime:nullable, quantity:integer:nullable, adult:integer:nullable, children:integer:nullable, infant:integer:nullable, airport_name:string:nullable, airport_location:string:nullable, flight_number:string:nullable, arrival_time:datetime:nullable, other_transport:string:nullable, comment:text, info_special_check:integer:default(0), info_special:text:nullable, how_did_enquire:string:default('other'), status:string, price:double:nullable, currency:string:nullable"
 
 /**/
