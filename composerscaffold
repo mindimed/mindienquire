@@ -1,7 +1,27 @@
 /* USER PRIVILEDGE*/
-php artisan generate:scaffold user --fields="role_id:integer:default(2),organization_id:integer, email:string:unique, first_name:string, last_name:string, password:string, active:integer:default(1),remember_token:string:nullable"
+php artisan generate:scaffold user --fields="role_id:integer:default(2), organization_id:integer, email:string:unique, first_name:string, last_name:string, password:string, active:integer:default(1), remember_token:string:nullable"
 
 php artisan generate:scaffold role --fields="name:string, code:string, permissions:text:nullable, is_super_user:integer:default(0)"
 php artisan generate:scaffold organization --fields="name:string, code:string"
+
+/*HOTEL MANAGEMENT*/
+php artisan generate:scaffold offer --fields="hotel_id:integer:unsigned, room_id:integer:unsigned, booking_engine_detail_id:integer:unsigned, name:string, description:string:nullable, active:integer:default(1), is_booking_connected:integer:default(0), is_broken:integer:default(0)"
+php artisan generate:scaffold room --fields="hotel_id:integer:unsigned, name:string, code:string, description:string"
+
+/* BOOKING ENGINE*/
+php artisan generate:scaffold booking_engine --fields="name:string, code:string, url:string, method:string:default('POST')"
+
+php artisan generate:scaffold booking_engine_setting --fields="hotel_id:integer:unsigned, engine_id:integer:unsigned, prefix:string"
+php artisan generate:scaffold booking_engine_detail --fields="hotel_id:integer:unsigned, setting_id:integer:unsigned, param_name:string, param_value:string:nullable, is_static:integer:default(1)"
+
+/* EMAIL */
+php artisan generate:scaffold email_template --fields="hotel_id:integer:unsigned, template:text"
+php artisan generate:scaffold email_address --fields="hotel_id:integer:unsigned, toccbcc:string, email:string, full_name:string"
+php artisan generate:scaffold email_setting --fields="hotel_id:integer:unsigned, template_id:integer:unsigned, title:string, body:text, status:string"
+
+php artisan generate:pivot email_setting email_address
+
+php artisan generate:scaffold outbox --fields="hotel_id:integer:unsigned, enquire_id:integer:unsigned, status:string, sent_to:text, sent_cc:text, sent_bcc:text, message:text, title:string"
+
 
 /**/

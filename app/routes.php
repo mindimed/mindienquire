@@ -18,3 +18,27 @@ Route::get('/', function()
 
 
 Route::resource('roles', 'RolesController');
+
+Route::resource('organizations', 'OrganizationsController');
+
+Route::resource('users', 'UsersController');
+
+Route::resource('offers', 'OffersController');
+
+Route::resource('rooms', 'RoomsController');
+
+
+
+Route::resource('booking_engines', 'Booking_enginesController');
+
+Route::resource('booking_engine_settings', 'Booking_engine_settingsController');
+
+Route::resource('booking_engine_details', 'Booking_engine_detailsController');
+
+Route::resource('email_templates', 'Email_templatesController');
+
+Route::resource('email_addresses', 'Email_addressesController');
+
+Route::resource('email_settings', 'Email_settingsController');
+
+Route::resource('outboxes', 'OutboxesController');

@@ -3,7 +3,7 @@
 @section('main')
 			      <div class="page-title">
               <div class="title_left">
-                <h3>All Role <small></small></h3>
+                <h3>All Offers <small></small></h3>
               </div>
 
               <div class="title_right">
@@ -25,7 +25,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>{{ link_to_route('roles.create', 'Add New Role', null, array('class' => 'btn btn-lg btn-success')) }}</h2>
+                    <h2>{{ link_to_route('offers.create', 'Add New Offers', null, array('class' => 'btn btn-lg btn-success')) }}</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -33,39 +33,48 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-					         @if ($roles->count())
+					         @if ($offers->count())
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-            							<th>Name</th>
-            							<th>Code</th>
-            							<th>Permissions</th>
-            							<th>super User</th>
-            							<th>&nbsp;</th>
+            				<th>Hotel_id</th>
+				<th>Room_id</th>
+				<th>Booking_engine_detail_id</th>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Active</th>
+				<th>Is_booking_connected</th>
+				<th>Is_broken</th>
+            				<th>&nbsp;</th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($roles as $role)
+                        @foreach ($offers as $offer)
           							<tr>
-          								<td>{{{ $role->name }}}</td>
-          								<td>{{{ $role->code }}}</td>
-          								<td>{{{ $role->permissions }}}</td>
-          								<td>{{{ $role->is_super_user }}}</td>
-          			                    <td>
-          			                        {{ Form::open(array('method' => 'DELETE', 'route' => array('roles.destroy', $role->id))) }}
-          			                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-          			                        {{ Form::close() }}
-          			                        {{ link_to_route('roles.edit', 'Edit', array($role->id), array('class' => 'btn btn-info')) }}
-          			                    </td>
+          								<td>{{{ $offer->hotel_id }}}</td>
+					<td>{{{ $offer->room_id }}}</td>
+					<td>{{{ $offer->booking_engine_detail_id }}}</td>
+					<td>{{{ $offer->name }}}</td>
+					<td>{{{ $offer->description }}}</td>
+					<td>{{{ $offer->active }}}</td>
+					<td>{{{ $offer->is_booking_connected }}}</td>
+					<td>{{{ $offer->is_broken }}}</td>
+                    <td>
+                        {{ Form::open(array('method' => 'DELETE', 'route' => array('offers.destroy', $offer->id))) }}
+                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                        {{ Form::close() }}
+                        {{ link_to_route('offers.edit', 'Edit', array($offer->id), array('class' => 'btn btn-info')) }}
+                    </td>
           							</tr>
 						            @endforeach
                       </tbody>
                     </table>
           					@else
-          						There are no roles
+          						There are no offers
           					@endif
                   </div>
                 </div>
               </div>
             </div>
 @stop
+

@@ -3,7 +3,7 @@
 @section('main')
 			      <div class="page-title">
               <div class="title_left">
-                <h3>All Role <small></small></h3>
+                <h3>All Email_addresses <small></small></h3>
               </div>
 
               <div class="title_right">
@@ -25,7 +25,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>{{ link_to_route('roles.create', 'Add New Role', null, array('class' => 'btn btn-lg btn-success')) }}</h2>
+                    <h2>{{ link_to_route('email_addresses.create', 'Add New Email_addresses', null, array('class' => 'btn btn-lg btn-success')) }}</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -33,39 +33,40 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-					         @if ($roles->count())
+					         @if ($email_addresses->count())
                     <table id="datatable-buttons" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-            							<th>Name</th>
-            							<th>Code</th>
-            							<th>Permissions</th>
-            							<th>super User</th>
-            							<th>&nbsp;</th>
+            				<th>Hotel_id</th>
+				<th>Toccbcc</th>
+				<th>Email</th>
+				<th>Full_name</th>
+            				<th>&nbsp;</th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach ($roles as $role)
+                        @foreach ($email_addresses as $email_address)
           							<tr>
-          								<td>{{{ $role->name }}}</td>
-          								<td>{{{ $role->code }}}</td>
-          								<td>{{{ $role->permissions }}}</td>
-          								<td>{{{ $role->is_super_user }}}</td>
-          			                    <td>
-          			                        {{ Form::open(array('method' => 'DELETE', 'route' => array('roles.destroy', $role->id))) }}
-          			                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
-          			                        {{ Form::close() }}
-          			                        {{ link_to_route('roles.edit', 'Edit', array($role->id), array('class' => 'btn btn-info')) }}
-          			                    </td>
+          								<td>{{{ $email_address->hotel_id }}}</td>
+					<td>{{{ $email_address->toccbcc }}}</td>
+					<td>{{{ $email_address->email }}}</td>
+					<td>{{{ $email_address->full_name }}}</td>
+                    <td>
+                        {{ Form::open(array('method' => 'DELETE', 'route' => array('email_addresses.destroy', $email_address->id))) }}
+                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                        {{ Form::close() }}
+                        {{ link_to_route('email_addresses.edit', 'Edit', array($email_address->id), array('class' => 'btn btn-info')) }}
+                    </td>
           							</tr>
 						            @endforeach
                       </tbody>
                     </table>
           					@else
-          						There are no roles
+          						There are no email_addresses
           					@endif
                   </div>
                 </div>
               </div>
             </div>
 @stop
+

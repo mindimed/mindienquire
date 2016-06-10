@@ -22,21 +22,37 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Home</a></li>
+                  <li><a><i class="fa fa-home"></i> Master Data <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="index.html">Dashboard</a></li>
-                      <li><a href="index2.html">Dashboard2</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
+                      <li><a href="{{url('/organizations')}}">Organizations</a></li>
+                      <li><a href="{{url('/roles')}}">Roles</a></li>
+                      <li><a href="{{url('/users')}}">Users</a></li>
+                      <li><a href="#">Hotels</a></li>
+                      <li><a href="#">Hotel Admin</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                  <li><a href="{{url('/')}}"><i class="fa fa-home"></i> Enquiries</a></li>
+                  <li><a><i class="fa fa-edit"></i> Hotel Management <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                      <li><a href="#">Offer (Special / Package)</a></li>
+                      <li><a href="#">Rooms</a></li>
+                      <li><a href="#">Booking Engine</a></li>
+                      <li><a>Email<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                            <li class="sub_menu"><a href="#">Email Templates</a></li>
+                            <li><a href="#">Email Settings</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-home"></i> SAMPLE FOR TESTING <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{url('/organizations')}}">FORM ENQUIRE</a></li>
+                      <li><a href="{{url('/roles')}}">Roles</a></li>
+                      <li><a href="{{url('/users')}}">Users</a></li>
+                      <li><a href="#">Hotels</a></li>
+                      <li><a href="#">Hotel Admin</a></li>
                     </ul>
                   </li>
                 </ul>
