@@ -6,7 +6,7 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "phpmailer/phpmailer": "~5.2",
-    	"way/generators": "~2.0"
+        "dollar/generators": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

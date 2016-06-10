@@ -1,0 +1,7 @@
+/* USER PRIVILEDGE*/
+php artisan generate:scaffold user --fields="role_id:integer:default(2),organization_id:integer, email:string:unique, first_name:string, last_name:string, password:string, active:integer:default(1),remember_token:string:nullable"
+
+php artisan generate:scaffold role --fields="name:string, code:string, permissions:text:nullable, is_super_user:integer:default(0)"
+php artisan generate:scaffold organization --fields="name:string, code:string"
+
+/**/
