@@ -42,3 +42,5 @@ Route::resource('email_addresses', 'Email_addressesController');
 Route::resource('email_settings', 'Email_settingsController');
 
 Route::resource('outboxes', 'OutboxesController');
+
+Route::resource('enquires', 'EnquiresController');

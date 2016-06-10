@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('Email_addressesTableSeeder');
 		$this->call('Email_settingsTableSeeder');
 		$this->call('OutboxesTableSeeder');
+		$this->call('EnquiresTableSeeder');
 	}
 
 }
